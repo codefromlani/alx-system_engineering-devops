@@ -1,2 +1,5 @@
 #!/bin/bash
-echo "$PATH" | tr ':' '\n' | grep -v '^$' | wc -l
+# Split PATH into lines, ignore empty entries, count only existing directories
+echo "$PATH" | tr ':' '\n' | while read dir; do
+    [ -d "$dir" ] && echo "$dir"
+done | wc -l
