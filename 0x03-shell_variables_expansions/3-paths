@@ -1,2 +1,2 @@
 #!/bin/bash
-count=0; for d in $(echo "$PATH" | tr ':' ' '); do if [ -d "$d" ]; then count=$((count + 1)); fi; done; echo $count
+IFS=':'; count=0; for d in $PATH; do [ -d "$d" ] && count=$((count + 1)); done; echo $count
