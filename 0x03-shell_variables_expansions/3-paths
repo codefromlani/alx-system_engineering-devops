@@ -1,2 +1,2 @@
 #!/bin/bash
-IFS=':'; for d in $PATH; do if test -d "$d"; then echo 1; fi; done | wc -l
+IFS=':' for d in $PATH do if test -d "$d" then echo 1; fi; done | wc -l
