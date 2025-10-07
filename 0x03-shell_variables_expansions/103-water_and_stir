@@ -1,2 +1,2 @@
 #!/bin/bash
-n=$(echo "$WATER" | tr water 01234) m=$(echo "$STIR" | tr stir. 0123456) a=bestchol s=$((n + m)) r= d=0 i=0 while [ "$s" -gt 0 ]; do d=$((s % 8)) r=${a:$d:1}$r s=$((s / 8)); done ; echo "${r:-b}"
+echo $(printf %o $(($((5#$(echo $WATER | tr 'water' '01234'))) + $((5#$(echo $STIR | tr 'stir.' '01234'))))) | tr '01234567' 'bestchol')
